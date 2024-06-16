@@ -35,4 +35,8 @@
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
   [plugins.inputs]
-    threshold = 90
+    audits = ["performance", "accessibility", "best-practices", "seo"]
+    audit_url = "/"
+    thresholds = { performance = 90, accessibility = 90, "best-practices" = 90, seo = 90 }
+    output_path = "lighthouse_report.html"
+    settings = { emulatedFormFactor = "desktop", throttlingMethod = "simulate" }
